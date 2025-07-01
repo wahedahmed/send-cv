@@ -126,3 +126,17 @@ button:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+.footer strong {
+  color: #555;
+}
+
