@@ -1,0 +1,128 @@
+:root {
+  --primary: #00bfa5;
+  --primary-dark: #00897b;
+  --bg: #ffffff;
+  --text: #333;
+  --input-bg: #f0f0f0;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #eee;
+    --input-bg: #1e1e1e;
+    --card-shadow: rgba(255, 255, 255, 0.05);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-card {
+  background: var(--bg);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  border: 1px solid #ddd;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--input-bg);
+  color: var(--text);
+  transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 6px rgba(0,191,165,0.3);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+.status {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+}
+
+.required::after {
+  content: '*';
+  color: red;
+  margin-right: 4px;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
